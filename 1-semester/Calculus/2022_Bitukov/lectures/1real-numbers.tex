@@ -1,0 +1,29 @@
+\section{Действительные числа и их свойства. Принцип Архимеда. Грани числовых множеств. Теорема о существовании точных граней}
+
+\begin{myax}[о непрерывности множества $\mathbb{R}$] 
+	Пусть $\mathbf{X} \neq \varnothing, \mathbf{Y} \neq \varnothing$ - подмножества множества $\mathbb{R}$ и для $\forall x \in \mathbf{X}$ и $\forall y \in \mathbf{Y}$ выполняется $x \leq y$. Тогда $\exists c \in \mathbb{R}: x \leq c \leq y, \forall x \in \mathbf{X}, \forall y \in \mathbf{Y}$. 
+\end{myax}
+
+\begin{definition}
+	Пусть $\mathbf{X} \subset \mathbb{R}$. Множество $\mathbf{X}$ называется ограниченным сверху (снизу), если $\exists c \in \mathbb{R}: x \leq c$ $(x \geq c)$, $\forall x \in \mathbf{X}$. \\
+	Если множество ограничено и сверху, и снизу $\Rightarrow$ это ограниченное множество. \\
+	(картинка 1)
+\end{definition}
+
+\begin{definition}
+	Пусть $\mathbf{X} \subset \mathbb{R}$ и $\mathbf{X}$ ограничено сверху (снизу). Наименьшее (наибольшее) из чисел, ограничивающих сверху (снизу) множество $\mathbf{X}$, называется верхней (нижней) гранью множества $\mathbf{X}$. \\
+	Обозначается $\sup \mathbf{X}$ $(\inf \mathbf{X})$. \\
+	(картинка 2)
+\end{definition}
+
+\begin{theorem}[Вейерштрасс - о существовании верхней и нижней грани]
+	Если $\mathbf{X} \neq \varnothing$ и ограничено сверху (снизу), то существует единственная верхняя (нижняя) грань.
+\end{theorem}
+
+\begin{proof}
+	Пусть $\mathbf{Y} = \{y: y \in \mathbb{R}, y \mbox{ ограничивает сверху}\} \neq \varnothing$, так как $\mathbf{X}$ ограничено сверху. Тогда для $\forall x \in \mathbf{X}$ и $\forall y \in \mathbf{Y}$ (так как $y$ ограничивает сверху $\mathbf{X}$) выполняется $x \leq y \Rightarrow \mbox{по аксиоме непрерывности } \mathbf{R}$ $\exists \beta \in \mathbf{R}: x \leq \beta \leq y$. \\
+	Так как $x \leq \beta, \forall x \in \mathbf{X}, \mbox{ то } \beta \mbox{ ограничивает сверху } \mathbf{X}.$ \\
+	Так как $\beta \leq y, \forall y \in \mathbf{Y}, \mbox{ то } \beta \mbox{ - наименьшее из чисел, ограничивающих сверху } \mathbf{X} \Rightarrow \beta = \sup \mathbf{X}.$ \\
+	\textit{Доказательство единственности верхней грани:} Пусть $\beta \mbox{ и } \hat{\beta} \mbox{ - верхние грани } \textbf{X}$. \\
+	
+\end{proof}
