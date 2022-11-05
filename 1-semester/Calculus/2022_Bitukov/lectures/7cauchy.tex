@@ -1,0 +1,32 @@
+\section{Критерий Коши сходимости последовательностей}
+
+\begin{theorem}
+	Последовательность $\{\mathbf{X_n}\}_{n \in \mathbb{N}}$ имеет предел $\Leftrightarrow$ она фундаментальна, то есть $\forall \epsilon > 0 \ \exists n \in \mathbb{N}: \forall n, m > n_\epsilon$ выполняется $|x_n - x_m| < \epsilon$. 
+\end{theorem}
+
+\begin{proof}
+	\textit{Туда: }
+	Пусть $\exists \displaystyle{\lim_{n \to \infty}} x_n = A \Rightarrow \forall \epsilon > 0 \ \exists n_{\epsilon} \in \mathbb{N}: \forall n > n_{\epsilon} \ |x_n - A| < \frac{\epsilon}{2} \Rightarrow \forall n, m > n_{\epsilon} \Rightarrow |x_n - x_m| = |(x_n - A) + (A - x_m)| \le |x_n - A| + |x_n -A| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+	\\ \textit{Обратно: } Пусть $\{x_n\}_{n \in \mathbb{N}}$ фундаментальна, то есть $\forall \epsilon > 0 \ \exists n_\epsilon \in \mathbb{N}: \forall n, m > n_\epsilon \Rightarrow |x_n - x_m| < \epsilon.$
+	\begin{enumerate}
+		\item Докажем, что $\{x_n\}_{n \in \mathbb{N}}$ ограничена. \\
+		Пусть $\epsilon = 1$ по уравнению выше $\exists n_1 \in \mathbb{N}: \forall n, m > n_1 \Rightarrow |x_n - x_m| < 1; m = n_1 + 1 \Rightarrow \forall n > n_1; |x_n| = |(x_n) - x_{n_1 + 1} + x_{n_1 + 1}| \le |x_n - x_{n_1 + 1}| + |x_{n_1 + 1}| < 1 + |x_{n_1 + 1}|$. \\
+		$M = max(|x_1|, |x_2|, ..., |x_{n_1}|, 1 + |x_{n_1 + 1}|)$.
+		\item Есть предел: $\alpha_n = inf\{x_n, x_{n + 1}, x_{n + 2}, ...\} = \displaystyle{\inf_{k \ge n} x_k}; \ \beta_n = \sup\{x_n, x_{n + 1}, x_{n + 2}, ...\} = \displaystyle{\sup_{k \ge n} x_k}; \ \alpha_n \le \alpha_{n + 1}; \beta_n \le \beta_{n + 1}$. \\
+		Получаем систему вложенных отрезков $[\alpha_n; \beta_n] \supset [\alpha_{n+1}; \beta{n+1}]$. По теореме Коши-Кантора, $\exists A \in [\alpha_n; \beta_n], \forall n \ \alpha_n \le A \le \beta_n, \forall n$. Если $k \le n, \mbox{ то } x_k \ in \{x_n, x_{n + 1}, ...\} \Rightarrow \alpha_n \le x_k \le \beta_n \Rightarrow \displaystyle{
+		\begin{cases}
+			\alpha_n \le A \le\beta_n \\
+			\alpha_n \le x_n \le \beta_n
+		\end{cases}
+	} \Rightarrow |A - x_n| \le \beta_n - \alpha_n$ \\
+	По уравнению выше для $\forall \epsilon > 0 \  \exists n_\epsilon \in \mathbb{N}: \forall n, m > n_\epsilon \Rightarrow |x_n - x_m| < \frac{\epsilon}{3}$. \\
+	Пусть $m = n_\epsilon + 1 \Rightarrow x_{n_\epsilon + 1} - \frac{\epsilon}{3} < x_k < x_{n_\epsilon + 1} + \frac{\epsilon}{3}, \forall k > n_\epsilon$
+	Тогда при $\forall n > n_\epsilon \Rightarrow \displaystyle{
+		\begin{rcases}
+			\alpha_n \ge x_{n_\epsilon + 1} - \frac{\epsilon}{3} \\
+			\beta_n \le x_{n_\epsilon + 1} + \frac{\epsilon}{3}
+		\end{rcases}
+	} \Rightarrow \beta_n - \alpha_n \le \frac{2\epsilon}{3} < \epsilon \Rightarrow$
+	Итак, $\forall \epsilon > 0 \ \exists n_\epsilon: \forall n > n_\epsilon \Rightarrow |A - x_n| \le \beta_n - \alpha_n < \epsilon \Rightarrow \displaystyle{\lim_{n\to\infty}} x_n = A$.
+	\end{enumerate}
+\end{proof}
