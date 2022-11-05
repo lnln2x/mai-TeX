@@ -1,0 +1,50 @@
+\section{Леммы, связанные с полнотой множества действиетльных чисел: о вложенных отрезках, о конечном покрытии, о предельной точке}
+
+\begin{theorem}[Коши-Кантор - принцип вложенных отрезков]
+	Пусть дана последовательность отрезков $I_1 \supset I_2 \supset ... \supset I_n ... \mbox{ }(... I_n \subset ... \subset I_2 \subset I_1)$. Тогда существует число $c \in \mathbb{R}: c \in \mathbf{I_k}, \forall k = 1, 2, 3... \mbox{ } (c \in \bigcap \mathbf{I_k}).$
+\end{theorem}
+
+\begin{proof}
+	Пусть $\mathbf{I_k} = [a_k; b_k], k = 1, 2..., \mathbf{X} - \mbox{ множество }; \mathbf{X} = \{a_k: k \in \mathbb{N}\} \neq \varnothing, \mathbf{Y} = \{b_k: k \in \mathbb{N}\} \neq \varnothing.$ Тогда $a_k \le b_m, \forall k, m \in \mathbb{N}.$ Действительно, если $\exists k, m \in \mathbb{N}: a_k > b_m \Rightarrow a_m \le b_m < a_k \le b_k \Rightarrow I_k = [a_k; b_k] \mbox{ и } I_m = [a_m; b_m] \mbox{ не пересекаются}$. Но это невозможно, так как если $m > k, \mbox{ то } I_m < I_k$; если $m < k, \mbox{ то } I_m > I_k$. \\
+	Итак, предположение неверно $\Rightarrow a_k \le b_m, \forall k, m \in \mathbb{N}.$ \\
+	Итак, $\mathbf{X} = \{a_k\} \neq \varnothing, \mathbf{Y} = \{b_m\} \neq \varnothing.$ \\
+	$a_k \leq b_m \forall k, m \Rightarrow \mbox{по аксиоме непрерывности } \exists c \in \mathbb{R}: a_k \leq c \leq b_m, \forall k, m \in \mathbb{N} \Rightarrow a_k \leq c \leq b_k \Rightarrow c \in \mathbf{I_k}, \forall k$.
+\end{proof}
+
+\begin{definition}
+	Семейство множеств $\mathbf{X} = \{\mathbf{U}_\alpha\}_{\alpha \in \mathbf{A}}$ называется покрытием множества $\mathbf{Y}$, если $\mathbf{Y} \subset \bigcup \mathbf{U_\alpha}$.
+\end{definition}
+
+\begin{theorem}[Борель-Лебег]
+	Из любого покрытия отрезка числовой прямой интервалами можно выделить конечное покрытие.
+\end{theorem}
+
+\begin{proof}
+	Пусть $I = [a; b]$ - отрезок. 
+	$\mathbf{X} = \{\mathbf{U}_\alpha\}_{\alpha \in \mathbf{A}}$ - покрытие $I$, то есть $I \subset \bigcup \mathbf{U}_\alpha$. $\mathbf{U}_\alpha = (x_{1\alpha}; x_{2\alpha})$ - интервалы числовой прямой. \\
+	Обозначим множество $\mathbf{M} = \{x: x \in [a; b] \mbox{ и } [a; x] \mbox{ покрывается конечным семейством} \\ \mbox{интервалов из } \mathbf{X}\}$.
+	\begin{enumerate}
+		\item $\mathbf{M} \neq \varnothing$, так как $a \in \mathbf{M}$, так как $[a; b] \subset \bigcup \mathbf{U}_\alpha \Rightarrow \exists \hat{\alpha}: a \in \mathbf{U}_\alpha \Rightarrow [a; a] \subset \mathbf{U}_{\hat{\alpha}}$. 
+		\item $\mathbf{M} \subset [a; b] \Rightarrow \mathbf{M}$ ограничено. Следовательно, $\exists \beta = \sup \mathbf{M} \leq b$.
+	\end{enumerate}
+	Так как $\beta \in [a; b] \Rightarrow \exists \alpha^{'}: \beta \in \mathbf{U}_{\alpha^{'}} = (x^{'}; x^{''})$. \\
+	$x^{'} < \beta \Rightarrow \sup \mathbf{M} \Rightarrow \exists \hat{x} \in \mathbf{M}: x^{'} < \hat{x} \leq \beta \Rightarrow [a; x^{'}]$ покрывается конечным семейством интервалов: $\mathbf{U_{\alpha_1}}, \mathbf{U_{\alpha_2}}, ..., \mathbf{U_{\alpha_k}}$ \\
+	$[a;\hat{x}] \subset \bigcup \mathbf{U_\alpha} \Rightarrow [a; b] \subset \mathbf{U_{\alpha_1}} \cup \mathbf{U_{\alpha_2}} \cup ... \cup \mathbf{U_{\alpha_k}} \cup \mathbf{U_{\alpha^{'}}} \Rightarrow \beta \in \mathbf{M} \Rightarrow$ если предположить, что $\beta < b, \mbox{ то } \{\mathbf{U_{\alpha_1}}, \mathbf{U_{\alpha_2}}, ... ,\mathbf{U_{\alpha_k}}, \mathbf{U_{\alpha^{'}}}\}$ покрывает $\forall [a: \hat{\hat{x}}]$, где $\hat{\hat{x}} \in (\beta; x^{''}) \Rightarrow \hat{\hat{x}} \in \mathbf{M}$ и $\hat{\hat{x}} > \beta$ - противоречие тому, что $\beta = \sup \textbf{M}$.
+\end{proof}
+
+\begin{definition}
+	Любой интервал $(a; b)$, содержащий точку $x_0$, называется окрестностью этой точки и обозначается $\mathbf{U}(x_0) = (a; b)$.
+\end{definition}
+
+\begin{definition}
+	Точка $x_0$ называется предельной точкой множества $\mathbf{X} \subset \mathbb{R}$, если для $\forall \mathbf{U}(x_0), \mathbf{U}_{x_0}\cap\mathbf{X}$ - бесконечное множество.
+\end{definition}
+
+\begin{theorem}[Больцано-Вейерштрасс]
+	Всякое бесконечное ограниченное непустое множество $\mathbf{X} \subset \mathbb{R}$ имеет предельную точку.
+\end{theorem}
+
+\begin{proof}
+	Так как $\mathbf{X}$ - ограниченное множество, оно ограничено сверху и снизу, то есть $\exists a, \exists b: a \leq x \leq b, \forall x \in \mathbf{X} \Rightarrow \mathbf{X} \subset [a; b]$. \\
+	Предположим, что $\mathbf{X}$ не имеет предельных точек $\Rightarrow \forall x \in [a; b]$ не является предельной точкой $\mathbf{X} \Rightarrow \exists \mathbf{U}(x)$ - окрестность: $\mathbf{U}(x) \cap \mathbf{X}$ - конечное множество $\Rightarrow [a; b] \subset \mathbf{U}(x), x \in [a; b] \Rightarrow$ по теореме Бореля-Лебега существует конечное покрытие $\{\mathbf{U}(x_1), \mathbf{U}(x_2), ..., \mathbf{U}(x_n)\}: \mathbf{X} \subset [a; b] \bigcup \mathbf{U}(x_i),$ но $\mathbf{U}(x_i) \cap \mathbf{X}$ - конечное множество $\Rightarrow \mathbf{X}$ - конечное, но, по условию, $\mathbf{X}$ - бесконечное $\Rightarrow$ противоречие.
+\end{proof}
