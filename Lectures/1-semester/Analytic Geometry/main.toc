@@ -1,0 +1,3 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Векторная алгебра}{5}{}%
+\contentsline {section}{\numberline {1.1}Векторы и линейные операции над векторами}{5}{}%
